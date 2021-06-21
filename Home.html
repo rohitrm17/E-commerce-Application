@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC | Home</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="Functions.js"></script>
+</head>
+<body>
+    <header>
+        <h1>ABC Shop</h1>
+    </header>
+    <div class="topnav">
+        <a href="Home.html">Home</a>
+        <a href="#footer">About</a>
+        <a onclick="document.getElementById('id01').style.display='block'" href="#">Login</a>
+        <a onclick="document.getElementById('id02').style.display='block'" href="#">SignUp</a>
+    </div>
+    <div class="searchnav">
+        <br>
+        <input type="text" id="mySearch" onclick="mySearchProduct()" placeholder="Search products ...">
+    </div>
+    <!--Login Page-->
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;
+        </span>
+        <form class="modal-content animate" id="userLoginForm" name="userLoginForm" method="POST">
+            <div class="container">
+                <label for="uname"><b>User Name</b></label>
+                    <input type="text" placeholder="Enter username" name="uname" required>
+                <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter password" name="psw" required>
+            <button type="Submit">Login</button>
+            </div>
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <!--SignUp Page -->
+    <div id="id02" class="modal">
+        <span onclick="document.getElementById('id02').style.display='none'"
+        class="close" title="Close Modal">&times;</span>
+        <form class="modal-content animate" id="userRegisterForm" name="userRegisterForm" method="POST">
+        <div class="container">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter email id" name="email" required>
+        
+            <label for="Name"><b>Name</b></label>
+            <input type="text" placeholder="Enter name" name="Name" required>
+        
+            <label for="MobNo"><b>Mobile Number</b></label>
+            <input type="text" placeholder="Enter mobile number" name="MobNo" required>
+        
+            <label for="Adress"><b>Address</b></label>
+            <input type="text" placeholder="Enter the delivery address" name="Adress" required>
+        
+            <label for="paswrd"><b>Password</b></label>
+            <input type="password" placeholder="Enter the password" name="paswrd" required>
+        
+            <button type="Submit">Sign Up</button>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+        </div>
+        </form>
+    </div>
+    <br>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img class="image" src="./Photos/phone.jpeg">
+        </div>
+        
+        <div class="mySlides fade">
+          <img class="image" src="./Photos/Laptop.jpg">
+        </div>
+        
+        <div class="mySlides fade">
+          <img class="image" src="./Photos/Headphone.jpg">
+        </div>
+        
+        <div class="mySlides fade">
+            <img class="image" src="./Photos/ac.jpg">
+        </div>
+
+    </div>
+    <br>    
+    <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+    </div>
+    <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 3000); // Change image every 2 seconds
+        }
+    </script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer id="footer">
+            Created by:<br>
+            Neha &MediumSpace; Rohit &MediumSpace; Anjali &MediumSpace; Anirudh
+    </footer>
+</body>
+</html>
